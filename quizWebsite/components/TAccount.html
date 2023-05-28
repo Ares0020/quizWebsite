@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../Web Fonts/stylesheet.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../stylesheet/TAccount.css" />
+  </head>
+  <body>
+    <main>
+      
+    <form class="SignUp">
+      <div class="container"><h1 class='title'>SignUp</h1></div>
+      <div class="container">
+        <input
+          type="email"
+          name="email"
+          id="signUpEmail"
+          placeholder="Enter Your Email Here..."
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          id="signUpPassword"
+          placeholder="Password"
+          required
+        />
+        <button id="signupBtn">Sign Up</button>
+      </div>
+      <span class="container">
+        <p>Or</p>
+      </span>
+      <div class="container google">
+        <span class="google__img">G</span>
+        <span class="txt">Continue with Google</span>
+      </div>
+      <div class="container switch">
+        <span class="signup selected">Sign Up</span>
+        <span class="login">LogIn</span>
+      </div>
+    </form>
+ 
+
+  
+    <form class="LogIn">
+      <div class="container"><h1>Log In</h1></div>
+      <div class="container">
+        <input
+          type="email"
+          name="email"
+          id="logInEmail"
+          placeholder="Enter Your Email Here..."
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          id="logInPassword"
+          placeholder="Password"
+          required
+        />
+        <button type="submit" id="logInBtn">Log In</button>
+      </div>
+      <span class="container">
+        <p>Or</p>
+      </span>
+      <div class="container google">
+        <span class="google__img">G</span>
+        <span class="txt">Continue with Google</span>
+      </div>
+      <div class="container switch">
+        <button class="signup">Sign Up</button>
+        <button class="login selected">LogIn</button>
+      </div>
+    </form>
+ 
+ 
+  </main>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      /*import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-analytics.js";
+        import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        */
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-analytics.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        onAuthStateChanged
+      } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDFjraJS-zlDoD4Lo6IwBTh91SdDdnbWtY",
+        authDomain: "quizwebsite-34d6f.firebaseapp.com",
+        projectId: "quizwebsite-34d6f",
+        storageBucket: "quizwebsite-34d6f.appspot.com",
+        messagingSenderId: "466852113658",
+        appId: "1:466852113658:web:730dc0942f293b0b8a6d43",
+        measurementId: "G-M0GNQJ3LGF",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const auth = getAuth(app);
+
+      const emailSignUp = document.querySelector("#signUpEmail");
+      const passwordSignUp = document.querySelector("#signUpPassword");
+      const signUpBtn = document.querySelector("#signupBtn");
+
+      const emailLogIn = document.querySelector("#logInEmail");
+      const passwordLogIn = document.querySelector("#logInPassword");
+      const logInBtn = document.querySelector("#logInBtn");
+
+      const signUpUser = () => {
+        const email = emailSignUp.value;
+        const password = passwordSignUp.value;
+       
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            const user = userCredential.user;
+
+            window.location.href = "http://127.0.0.1:5500/";
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+          });
+      };
+
+      const signInUser = () => {
+        const email = emailLogIn.value;
+        const password = passwordLogIn.value;
+        
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            const user = userCredential.user;
+            console.log(user);
+            console("you are signed in!");
+
+            window.location.href = "http://127.0.0.1:5500/index.html";
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode, errorMessage);
+          });
+      };
+
+      signUpBtn.addEventListener("click", signUpUser);
+      logInBtn.addEventListener("click", signInUser);
+    auth.onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in
+    console.log("User is signed in");
+
+    // Redirect the user to the desired page
+    window.location.href = "#quiz.html";
+  } else {
+    // User is signed out
+    console.log("User is signed out");
+  }
+});
+
+    </script>
+    <script src="../js/acc.js"></script>
+  </body>
+</html>

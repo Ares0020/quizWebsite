@@ -1,0 +1,88 @@
+main,.card{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.card{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid lightgray;
+    position: relative;
+}
+
+.rank{
+    font-size: 48px;
+}
+
+.name{
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #1b1b1d;
+}
+
+.dropdown{ 
+    display: inline;
+}
+
+.dropdown button{
+    border: 0;
+    cursor: pointer;
+}
+
+.dropdown-content{
+    display:none;
+    position: absolute;
+    max-height: 400px;
+    background-color: rgba(0,0,0,.3);
+    border-radius: 10px;
+    overflow-y: scroll;
+    z-index: 10;
+}
+
+.dropdown-content li{
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    gap: .5rem;
+    padding: .5rem 2rem;
+}
+
+.dropdown-content a::after,.dropdown-content a::before{
+    content: "";
+   width: 0; height: 0;
+}
+
+li .result{
+    color: whitesmoke;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+li .wrong{
+    background-color: rgb(255, 32, 32);
+}
+
+
+li .correct{
+    background-color: rgb(111, 111, 255)
+    ;
+}
+
+.r1{
+    color: rgb(255, 229, 79);
+}
+
+
+.r2{
+    color: silver;
+}
+
+
+.r3{
+    color: rgba(175, 0, 0, 0.281);
+}
+
+.show {
+    display: block;
+}

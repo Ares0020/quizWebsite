@@ -1,0 +1,57 @@
+body{
+    background-color: rgb(135, 7, 255);
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw; height: 100vh;
+    text-align: center;
+}
+
+h2{ font-size: 40px;}
+p{
+    font-size: 15px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+
+}
+.details{
+    margin-bottom: 0.5rem;
+}
+
+input{
+    margin-top: 0.5rem;
+    padding:20px 22px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 0;
+    background-color: rgb(147, 31, 255);
+    color: whitesmoke;
+    transition: 400ms ease-in-out;
+}
+
+input::placeholder{
+    color: whitesmoke;
+}
+
+input:focus{
+    background-color: rgb(104, 0, 201);
+    border: 0;
+    outline: 0;
+    padding:22px 24px;
+}
+
+button{
+    color:whitesmoke;
+    background-color: rgb(180, 99, 255);
+    border: 0;
+    margin-top: 1rem;
+    font-size: 20px;
+}
+

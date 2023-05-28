@@ -1,0 +1,61 @@
+body{
+    width: 100vw; height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    display: fixed;
+    width: 80%; height: 90%;
+    overflow: hidden;
+    text-align: center;
+    gap:1rem;
+}
+
+form{
+    width: 100%; height: 100%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    margin-bottom: 2rem;
+}
+
+input,button,.google,.switch span{
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.switch,.google{
+    flex-direction: row;
+}
+
+.google{
+    border: 1px solid #1b1b1d;
+    display: inline-block;
+    text-align: center;
+}
+
+.google__img{
+    border-right: 1px solid #1b1b1d;
+    padding-right: 1rem;
+}
+
+.switch span{
+    cursor: pointer;
+    border: 1px solid rgb(91, 91, 255);
+    background-color: rgb(91, 91, 255);
+    color: whitesmoke;
+}
+
+
+.switch .selected{
+    background-color: transparent;
+    color: rgb(91, 91, 255);
+    display: block;
+}
